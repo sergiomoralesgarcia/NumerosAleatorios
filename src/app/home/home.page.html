@@ -12,10 +12,27 @@
       <ion-title size="large">Numeros Aleatorios</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-label position="floating">Intenta adivinar un número aleatorio del 1 al 100</ion-label>
-    <ion-input placeholder="Introduce un número" required></ion-input>
   <div id="container">
+
+    <ion-card id="card">
+      <ion-card-header id="tittle">
+        <ion-card-title>Adivina el número que se ha generado aleatoriamente entre el 0 y el 100</ion-card-title>
+          <ion-item id="bar"></ion-item>
+      </ion-card-header>
+      
+      <ion-input min="1" max="100" type="number"[(ngModel)]="num" placeholder="Introducir número"></ion-input>
+      <ion-button shape="round" color="secondary" fill="outline" expand="full" (click)="comprobationNum()">Check</ion-button>
+      <ion-label>El número es {{lower}} {{num}}</ion-label>
+      <ion-card *ngIf="lower==''">
+        <ion-card-header>
+          Enhorabuena!!
+        </ion-card-header>
+        <ion-card-content>
+          ¿Quieres volver a jugar?
+          <ion-button shape="round" *ngIf="lower==''" expand="block" (click)="reload()">Volver a Jugar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-card>
   
   </div>
 </ion-content>

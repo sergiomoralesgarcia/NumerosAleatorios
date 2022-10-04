@@ -12,11 +12,31 @@ export class HomePage {
   }
 
   num: number;
-  scretNum: number = this.randomNum(0,100);
-  lower: "..."
+  secretNum: number = this.randomNum(0,100);
+  lower = "...";
 
   constructor() {}
 
+  comprobationNum() {
+    if (this.num) {
+      if (this.secretNum < this.num) {
+        this.lower = 'menor que';
+      }
+      else if (this.secretNum > this.num) {
+        this.lower = 'mayor que';
+      }
+      else {
+        this.lower = '';
+      }
+    }
+  }
+
+  reload(){
+    // reiniciamos las variables
+    this.num = null;
+    this.lower = '...';
+    this.secretNum = this.randomNum(0,100);
+  }
 }
 
 
