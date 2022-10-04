@@ -7,6 +7,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  randomNum(a, b): number{
+    return Math.round(Math.random() * (b - a))
+  }
+
+  num: number;
+  scretNum: number = this.randomNum(0,100);
+  lower: "..."
+
   constructor() {}
 
 }
+
+
+
+
