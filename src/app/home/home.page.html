@@ -22,7 +22,7 @@
       
       <ion-input min="1" max="100" type="number"[(ngModel)]="num" placeholder="Introducir número"></ion-input>
       <ion-button shape="round" color="secondary" fill="outline" expand="full" (click)="comprobationNum()">Check</ion-button>
-      <ion-label>El número es {{lower}} {{num}}</ion-label>
+      <ion-label id="speaker">El número es {{lower}} que tu número, {{num}}</ion-label>
       <ion-card *ngIf="lower==''">
         <ion-card-header>
           Enhorabuena!!

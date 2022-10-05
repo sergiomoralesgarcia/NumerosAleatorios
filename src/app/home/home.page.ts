@@ -20,10 +20,10 @@ export class HomePage {
   comprobationNum() {
     if (this.num) {
       if (this.secretNum < this.num) {
-        this.lower = 'menor que';
+        this.lower = 'menor';
       }
       else if (this.secretNum > this.num) {
-        this.lower = 'mayor que';
+        this.lower = 'mayor';
       }
       else {
         this.lower = '';
