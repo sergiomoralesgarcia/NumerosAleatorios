@@ -14,6 +14,7 @@ export class HomePage {
   num: number;
   secretNum: number = this.randomNum(0,100);
   lower = "...";
+  activaColor: boolean ;
 
   constructor() {}
 
@@ -27,6 +28,7 @@ export class HomePage {
       }
       else {
         this.lower = '';
+        this.activaColor = true;
       }
     }
   }
@@ -36,6 +38,7 @@ export class HomePage {
     this.num = null;
     this.lower = '...';
     this.secretNum = this.randomNum(0,100);
+    
   }
 }
 

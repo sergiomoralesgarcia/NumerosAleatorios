@@ -1,12 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header  [translucent]="true">
+  <ion-toolbar color="primary">
     <ion-title>
       Numero Aleatorio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content color="" [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Numeros Aleatorios</ion-title>
@@ -14,22 +14,22 @@
   </ion-header>
   <div id="container">
 
-    <ion-card id="card">
+    <ion-card [ngClass]="{'primaria':activaColor}" id="card">
       <ion-card-header id="tittle">
         <ion-card-title>Adivina el número que se ha generado aleatoriamente entre el 0 y el 100</ion-card-title>
-          <ion-item id="bar"></ion-item>
       </ion-card-header>
       
-      <ion-input min="1" max="100" type="number"[(ngModel)]="num" placeholder="Introducir número"></ion-input>
+      <ion-input  min="1" max="100" type="number"[(ngModel)]="num" (keyup.enter)="comprobationNum()" placeholder="Introducir número"></ion-input>
       <ion-button shape="round" color="secondary" fill="outline" expand="full" (click)="comprobationNum()">Check</ion-button>
-      <ion-label id="speaker">El número es {{lower}} que tu número, {{num}}</ion-label>
+      <ion-label>El número es {{lower}} que tu número, {{num}}</ion-label>
+      
       <ion-card *ngIf="lower==''">
         <ion-card-header>
           Enhorabuena!!
         </ion-card-header>
         <ion-card-content>
           ¿Quieres volver a jugar?
-          <ion-button shape="round" *ngIf="lower==''" expand="block" (click)="reload()">Volver a Jugar</ion-button>
+          <ion-button shape="round" *ngIf="lower==''" expand="block" (click)="reload()">reiniciar</ion-button>
         </ion-card-content>
       </ion-card>
     </ion-card>

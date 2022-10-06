@@ -13,6 +13,10 @@
   line-height: 26px;
 }
 
+.primaria {
+    background-color: green;
+}
+
 #container p {
   font-size: 16px;
   line-height: 22px;
@@ -26,6 +30,12 @@
   text-decoration: none;
 }
 
+#card{
+  margin-left: 300px;
+  margin-right: 300px;
+  padding: 20px;
+}
+
 #tittle {
   margin-top: 20px;
   margin-bottom: -10px;
@@ -37,4 +47,11 @@
 
 #speaker{
   margin-top: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+  #card{
+    margin: 10px;
+    padding: 10px;
+  }
 }
